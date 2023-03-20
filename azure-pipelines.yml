@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: AZ Vm Agent
 
 steps:
 - script: echo Hello, world!
