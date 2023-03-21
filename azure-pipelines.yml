@@ -11,7 +11,7 @@ pool: myAgentPool
 variables:
   azureServiceConnectionId: "sc-azuredevops"
   webAppName: "ml-flask-webapp"
-  projectRoot: ${System.DefaultWorkingDirectory}
+  #projectRoot: $(System.DefaultWorkingDirectory)
 
 
 stages:
@@ -27,8 +27,8 @@ stages:
         python3 -m pip install --upgrade pip
         python3 -m pip install setup
         python3 -m pip install -r requirements.txt
-      workingDirectory: $(projectRoot)
       displayName: 'Install python packages and dependency'
+      #workingDirectory: $(projectRoot)
 
 #    - script: |
 #        export PATH=$HOME/.local/bin:$PATH
