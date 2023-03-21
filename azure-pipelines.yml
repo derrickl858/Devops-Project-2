@@ -35,9 +35,10 @@ stages:
 #      displayName: 'myStep 2'
 
     - script: |
-#        export PATH=$HOME/.local/bin:$PATH
         make install
         make lint
+#        export PATH=$HOME/.local/bin:$PATH
+        
 #     workingDirectory: $(projectRoot)
       displayName:  'myStep 3 - Run lint tests'
 
