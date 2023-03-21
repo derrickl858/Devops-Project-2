@@ -11,6 +11,8 @@ pool: myAgentPool
 variables:
   azureServiceConnectionId: "sc-azuredevops"
   webAppName: "ml-flask-webapp"
+  environmentName: 'flask-ml-service'
+  projectRoot: $(System.DefaultWorkingDirectory)
 
 
 stages:
@@ -47,28 +49,15 @@ stages:
       displayName: 'Upload package'
       artifact: drop
 
-- stage: Deployment
-  displayName: "Deploy Webapp"
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
-  - deployment: DeploymentJob
-  pool: myAgentPool
-  environment: $(environmentName)
-  strategy:
-    runOnce:
-      deploy:
-        steps:
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(projectRoot)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
 
-        - task: UsePythonVersion@0
-          inputs:
-            versionSpec: 3.8
-          displayName: 'Use Python version'
-
-        - task: AzureWebApp@1
-          displayName: 'Deploy Azure Web App : {{ webAppName }}'
-          inputs:
-            azureSubscription: $(azureServiceConnectionId)
-            appName: $(webAppName)
-            package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-            deploymentMethod: zipDeploy
+    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      displayName: 'Upload package'
+      artifact: drop
