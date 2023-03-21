@@ -41,8 +41,8 @@ stages:
         source virt/bin/activate
         make install
         make lint
-      workingDirectory: $(projectRoot)
       displayName:  'Installing and run lint'
+      #workingDirectory: $(projectRoot)
 
 #   - task: ArchiveFiles@2
 #     displayName: 'myStep 4 - Archive files'
