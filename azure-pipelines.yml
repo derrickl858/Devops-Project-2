@@ -52,21 +52,23 @@ stages:
   dependsOn: Build
   condition: succeeded()
   jobs:
-      - deployment: DeploymentJob
-        pool: myAgentPool
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-              - task: UsePythonVersion@0
-                inputs:
-                  versionSpec: 3.8
-                displayName: 'Use Python version 3.8'
-    
-              - task: AzureWebApp@1
-                displayName: 'Deploy Azure Web App : {{ webAppName }}'
-                inputs:
-                  azureSubscription: $(azureServiceConnectionId)
-                  appName: $(webAppName)
-                  package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-                  deploymentMethod: zipDeploy
+  - deployment: DeploymentJob
+  pool: myAgentPool
+  environment: $(environmentName)
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+
+        - task: UsePythonVersion@0
+          inputs:
+            versionSpec: 3.8
+          displayName: 'Use Python version'
+
+        - task: AzureWebApp@1
+          displayName: 'Deploy Azure Web App : {{ webAppName }}'
+          inputs:
+            azureSubscription: $(azureServiceConnectionId)
+            appName: $(webAppName)
+            package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+            deploymentMethod: zipDeploy
