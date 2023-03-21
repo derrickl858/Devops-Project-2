@@ -22,10 +22,12 @@ stages:
     pool: myAgentPool
     steps:    
     - script: |
-        python3.8 -m pip install --upgrade pip
-        python3.8 -m pip install setup
-        python3.8 -m pip install -r requirements.txt
-#      workingDirectory: $(projectRoot)
+        python3 -m venv virt
+        source virt/bin/activate
+        python3 -m pip install --upgrade pip
+        python3 -m pip install setup
+        python3 -m pip install -r requirements.txt
+      workingDirectory: $(projectRoot)
       displayName: 'Install python packages and dependency'
 
 #    - script: |
@@ -35,11 +37,11 @@ stages:
 #      displayName: 'myStep 2'
 
     - script: |
+        python3 -m venv virt
+        source virt/bin/activate
         make install
         make lint
-#        export PATH=$HOME/.local/bin:$PATH
-        
-#     workingDirectory: $(projectRoot)
+      workingDirectory: $(projectRoot)
       displayName:  'Installing and run lint'
 
 #   - task: ArchiveFiles@2
