@@ -33,6 +33,7 @@ stages:
     - script: |
         python3 -m venv virt
         source virt/bin/activate
+        export PATH=$HOME/.local/bin:$PATH
         make install
         make lint
       displayName:  'Installing and run lint'
