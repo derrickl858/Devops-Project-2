@@ -26,7 +26,7 @@ stages:
         python3.8 -m pip install setup
         python3.8 -m pip install -r requirements.txt
 #      workingDirectory: $(projectRoot)
-      displayName: 'myStep 1'
+      displayName: 'Install python packages and dependency'
 
 #    - script: |
 #        export PATH=$HOME/.local/bin:$PATH
@@ -40,7 +40,7 @@ stages:
 #        export PATH=$HOME/.local/bin:$PATH
         
 #     workingDirectory: $(projectRoot)
-      displayName:  'myStep 3 - Run lint tests'
+      displayName:  'Installing and run lint'
 
 #   - task: ArchiveFiles@2
 #     displayName: 'myStep 4 - Archive files'
