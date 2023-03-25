@@ -20,7 +20,7 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: myAgentPool
+    pool: agentPool
     steps:    
     - script: |
         python3 -m venv virt
