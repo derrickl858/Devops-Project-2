@@ -31,8 +31,8 @@ stages:
       displayName: 'Install python packages and dependency'
 
     - script: |
-        python3 -m venv virt
-        source virt/bin/activate
+#        python3 -m venv virt
+#        source virt/bin/activate
         export PATH=$HOME/.local/bin:$PATH
         make install
         make lint
