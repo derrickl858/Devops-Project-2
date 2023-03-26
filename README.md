@@ -2,17 +2,19 @@
 This is a Python-based machine learning web application used to perform housing prices prediction in Boston given the pre-trained model. This project is also configured to use CI/CD integration to enhance the development process.
 
 ## Project Plan
-<TODO: Project Plan
-
 The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-housing-prediction
+*** Excel attached
 
 ## Instructions
+###Architectural Diagram
+![image](https://user-images.githubusercontent.com/43820257/227758351-9135cc10-953f-456b-a8fe-dd8461e640d9.png)
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+### Running in local environment
+1. After cloning the project to your environment, run `make install` to install all dependencies.
+2. Run `./app.py` to start the application.
+3. Using a different shell session, run `./make_prediction.sh` to query the local application.
 
-
-
+### Running in Azure App Service
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 * Project running on Azure App Service
