@@ -1,17 +1,17 @@
 # Overview
-
-<TODO: complete this with an overview of your project>
+This is a Python-based machine learning web application used to perform housing prices prediction in Boston given the pre-trained model. This project is also configured to use CI/CD integration to enhance the development process.
 
 ## Project Plan
 <TODO: Project Plan
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-housing-prediction
 
 ## Instructions
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
+
+
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
