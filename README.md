@@ -64,6 +64,9 @@ This repository is also configured with Github Actions & Azure DevOps to automat
 
 ![image](https://user-images.githubusercontent.com/43820257/227766204-09e7eccb-4dff-471c-8642-b3b9e1ccef26.png)
 
+### Load testing with locust
+![image](https://user-images.githubusercontent.com/43820257/227801681-50b6a7f6-9517-4a9f-9238-85e4db7e88ff.png)
+
 
 ### Output of streamed log files from deployed application
 ```
