@@ -6,7 +6,7 @@ The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-hous
 *** Excel attached
 
 ## Instructions
-###Architectural Diagram
+Architectural Diagram
 ![image](https://user-images.githubusercontent.com/43820257/227758351-9135cc10-953f-456b-a8fe-dd8461e640d9.png)
 
 ### Running in local environment
@@ -15,33 +15,33 @@ The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-hous
 3. Using a different shell session, run `./make_prediction.sh` to query the local application.
 
 ### Running in Azure App Service
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+1. Using Azure Cloud Shell, clone the git repository.
+![image](https://user-images.githubusercontent.com/43820257/227762084-043e509e-b7f2-404f-8e58-eff1ac48f14c.png)
+2. Execute `./commands.sh` to create an Azure App Service and deploy the application.
+4. In Azure Cloud Shell, run `./make_predict_azure_app.sh` to make the prediction call to the application on App Service.
+Note: You can change the App Service named in the `commands.sh` script when you crearte and deploy the application. Then, you will also need to modify the `make_predict_azure_app.sh` to your application name.
+
+### Using Azure Pipeline to Integrate CI/CD
+This repository is also configured with Github Actions & Azure DevOps to automate CI/CD into the development. When a new commit is pushed into the master branch, Github Action will be triggered to perform testing and linting of the project.  Another series of action will also be triggered in Azure DevOps to perform the similar action, with an additional step to build and deploy to the Azure App Service if all steps are passed.
+
 
 * Project running on Azure App Service
-* ![image](https://user-images.githubusercontent.com/43820257/227762050-a5e3633f-6508-41e0-87ea-6c43db60ae5f.png)
-
-* Project cloned into Azure Cloud Shell
-* ![image](https://user-images.githubusercontent.com/43820257/227762084-043e509e-b7f2-404f-8e58-eff1ac48f14c.png)
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-![image](https://user-images.githubusercontent.com/43820257/227762344-48449433-5145-41b9-a818-007f4aafa773.png)
-
+![image](https://user-images.githubusercontent.com/43820257/227762050-a5e3633f-6508-41e0-87ea-6c43db60ae5f.png)
 * Output of a test run
 ![image](https://user-images.githubusercontent.com/43820257/227766124-c66a422c-f413-4dd9-99a8-26691dcdef6c.png)
-
+* Passing tests that are displayed after running the `make all` command from the `Makefile`
+![image](https://user-images.githubusercontent.com/43820257/227762344-48449433-5145-41b9-a818-007f4aafa773.png)
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-* ![image](https://user-images.githubusercontent.com/43820257/227766144-58d842ee-30ba-4082-9be3-9cf39dc444b4.png)
-
+![image](https://user-images.githubusercontent.com/43820257/227766144-58d842ee-30ba-4082-9be3-9cf39dc444b4.png)
 * Running Azure App Service from Azure Pipelines automatic deployment
-* ![image](https://user-images.githubusercontent.com/43820257/227766168-d986f7cb-3c4b-4fd4-a20d-ef3b162d951d.png)
-
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+![image](https://user-images.githubusercontent.com/43820257/227766168-d986f7cb-3c4b-4fd4-a20d-ef3b162d951d.png)
+* Successful prediction from deployed flask app in Azure Cloud Shell.  
 ![image](https://user-images.githubusercontent.com/43820257/227766204-09e7eccb-4dff-471c-8642-b3b9e1ccef26.png)
 
+<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-* Output of streamed log files from deployed application
+
+### Output of streamed log files from deployed application
 ```
 Starting Live Log Stream ---
 2023-03-26T09:16:08.871477556Z /tmp/8db2dcf5d5d9f1d/antenv/lib/python3.8/site-packages/sklearn/base.py:329: UserWarning: Trying to unpickle estimator LinearRegression from version 1.1.3 when using version 1.0.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
