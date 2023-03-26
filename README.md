@@ -5,6 +5,12 @@ This is a Python-based machine learning web application used to perform housing 
 The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-housing-prediction
 *** Excel attached
 
+## Pre-Requisites
+To build and run this application on your own Azure Cloud using CI/CD pipeline, it is expected that you fulfil the following requirements:
+* Have access to Azure Portal with a valid subscription
+* Have a VM setup as Agent in Azure DevOps Agent Pool to run the automation in the pipeline.
+* Configured and setup Azure DevOps Organization and linked the organization 
+
 ## Instructions
 Architectural Diagram
 
@@ -56,8 +62,6 @@ This repository is also configured with Github Actions & Azure DevOps to automat
 
 ![image](https://user-images.githubusercontent.com/43820257/227766204-09e7eccb-4dff-471c-8642-b3b9e1ccef26.png)
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
 
 ### Output of streamed log files from deployed application
 ```
@@ -72,11 +76,10 @@ Starting Live Log Stream ---
 ```
 
 ## Enhancements
-
-<TODO: A short description of how to improve the project in the future>
+Things to improve in future enhancement:
+* Setup more test cases
+* Have a global and centralized configuration to store and modify variables (eg: App Service name)
+* Setting up App Service, VM Instance for agent, Azure DevOps Organization using Terraform
 
 ## Demo 
-
-<TODO: Add link Screencast on YouTube>
-
 
