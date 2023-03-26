@@ -7,6 +7,7 @@ The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-hous
 
 ## Instructions
 Architectural Diagram
+
 ![image](https://user-images.githubusercontent.com/43820257/227758351-9135cc10-953f-456b-a8fe-dd8461e640d9.png)
 
 ### Running in local environment
@@ -16,6 +17,7 @@ Architectural Diagram
 
 ### Running in Azure App Service
 1. Using Azure Cloud Shell, clone the git repository.
+
 ![image](https://user-images.githubusercontent.com/43820257/227762084-043e509e-b7f2-404f-8e58-eff1ac48f14c.png)
 2. Execute `./commands.sh` to create an Azure App Service and deploy the application.
 4. In Azure Cloud Shell, run `./make_predict_azure_app.sh` to make the prediction call to the application on App Service.
@@ -26,16 +28,22 @@ This repository is also configured with Github Actions & Azure DevOps to automat
 
 
 * Project running on Azure App Service
+
 ![image](https://user-images.githubusercontent.com/43820257/227762050-a5e3633f-6508-41e0-87ea-6c43db60ae5f.png)
 * Output of a test run
+
 ![image](https://user-images.githubusercontent.com/43820257/227766124-c66a422c-f413-4dd9-99a8-26691dcdef6c.png)
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
+
 ![image](https://user-images.githubusercontent.com/43820257/227762344-48449433-5145-41b9-a818-007f4aafa773.png)
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+* Successful deploy of the project in Azure Pipelines. 
+
 ![image](https://user-images.githubusercontent.com/43820257/227766144-58d842ee-30ba-4082-9be3-9cf39dc444b4.png)
 * Running Azure App Service from Azure Pipelines automatic deployment
+
 ![image](https://user-images.githubusercontent.com/43820257/227766168-d986f7cb-3c4b-4fd4-a20d-ef3b162d951d.png)
 * Successful prediction from deployed flask app in Azure Cloud Shell.  
+
 ![image](https://user-images.githubusercontent.com/43820257/227766204-09e7eccb-4dff-471c-8642-b3b9e1ccef26.png)
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
