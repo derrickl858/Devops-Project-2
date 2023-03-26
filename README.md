@@ -2,9 +2,9 @@
 This is a Python-based machine learning web application used to perform housing prices prediction in Boston given the pre-trained model. This project is also configured to use CI/CD integration to enhance the development process.
 
 ## Project Plan
-The link to Trello board can be found here https://trello.com/b/dlQki6Lj/ml-housing-prediction
+The link to Trello board can be found [here](https://trello.com/b/dlQki6Lj/ml-housing-prediction)
 
-The link to spreadsheet project planning can be found here https://docs.google.com/spreadsheets/d/19llKXC8RdFs9Ft9dTgM1rKpMnxMJeXlthlQD8qQkTPU/edit?usp=sharing
+The link to spreadsheet project planning can be found [here](https://docs.google.com/spreadsheets/d/19llKXC8RdFs9Ft9dTgM1rKpMnxMJeXlthlQD8qQkTPU/edit?usp=sharing)
 
 
 ## Pre-Requisites
